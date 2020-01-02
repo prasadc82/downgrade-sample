@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "esNext",
+    "resolveJsonModule": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "App/*": ["src/app/*"],
+      "NgApp/*": ["src/ng-app/*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
