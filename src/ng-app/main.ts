@@ -8,9 +8,9 @@ import {StaticProvider, PlatformRef, NgModuleRef, NgZone} from '@angular/core';
 import {downgradeModule, downgradeComponent} from '@angular/upgrade/static';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
+import {rootModule} from '../app/root.module';
 import { AppModule } from './app.module';
 import {UrlService, UIRouter} from '@uirouter/core';
-import {rootModule} from '../app/root.module';
 import { BootstrapComponent } from './bootstrap.component';
 
 const ng2BootstrapFn = (extraProviders: StaticProvider[]) =>  {
@@ -23,7 +23,7 @@ const ng2BootstrapFn = (extraProviders: StaticProvider[]) =>  {
         urlService.sync();
       }
       platformRef.injector.get<NgZone>(NgZone).run(startUIRouter);
-      return platformRef;      
+      return platformRef;
     });
 };
 
@@ -47,7 +47,7 @@ angular.bootstrap(document.body,
 // setTimeout(() => {
 //   const injector: angular.auto.IInjectorService = angular.element(document.body).injector();
 //   const urlService: UrlService = injector.get('$urlService');
-  
+
 //   // setTimeout needed to allow angular routes to initialize after refresh
 //   urlService.listen();
 //   urlService.sync();
