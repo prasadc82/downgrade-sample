@@ -1,8 +1,7 @@
-import uiRouter from '@uirouter/angularjs';
 import component from './proposal-tool.component';
 
 export default angular.module('proposalTool', [
-  uiRouter
+  'ui.router.upgrade'
 ])
   .component('proposalTool', component)
   .config(['$stateProvider', ($stateProvider) => {

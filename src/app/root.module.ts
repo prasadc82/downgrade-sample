@@ -1,17 +1,14 @@
 import * as angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
-import {upgradeModule} from '@uirouter/angular-hybrid';
-
-import component from './root.component';
+import configModule from './config.module';
 import proposalToolModule from './components/proposal-tool/proposal-tool.module';
-
-// import utilities from 'media-ui-utilities';
+import utilities from 'media-ui-utilities';
+import component from './root.component';
 
 export const rootModule = angular.module('root', [
-  uiRouter,
-  upgradeModule.name,
+  'ui.router.upgrade',
+  configModule,
   proposalToolModule,
-  // utilities
+  utilities
 ]);
 
 rootModule.component('root', component);

@@ -1,13 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {UIRouterModule, UIRouter, servicesPlugin} from '@uirouter/angular'
+import {UIRouterModule, UIRouter} from '@uirouter/angular'
 import {UIRouterUpgradeModule} from '@uirouter/angular-hybrid';
 import { BootstrapComponent } from './bootstrap.component';
-
-// FIX for the HYBRID
-// servicesPlugin(null);
-
-import { RouterModule } from '@angular/router';
 
 const dashboardFutureState = {
   name: 'dashboard.**',
@@ -26,7 +21,6 @@ const dashboardFutureState = {
     BrowserModule,
     UIRouterUpgradeModule,
     UIRouterModule.forChild({states: [dashboardFutureState]}),
-    RouterModule.forRoot([])
   ]
 })
 export class AppModule {
