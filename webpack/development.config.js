@@ -37,6 +37,7 @@ config.plugins.push(new HtmlWebpackPlugin({
 }));
 
 config.devServer = {
+  historyApiFallback: true,
   contentBase: `${paths.dist}`,
   port: common.port,
   headers: {

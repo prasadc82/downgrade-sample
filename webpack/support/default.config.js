@@ -39,7 +39,7 @@ let config = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          'to-string-loader',
+          'style-loader',
           'css-loader'
         ]
       },

@@ -1,4 +1,14 @@
 <div class="rl-container proposal-tool">
   <a ng-if="$ctrl.state.current.name !== 'dashboard'" ui-sref="dashboard">Dashboard</a>
+  <h4>Data Passed from GUP as URL Params</h4>
+  <div class="well">
+    <pre>
+      <code>
+        {{$ctrl.data}}
+      </code>
+    </pre>
+  </div>
+  <!-- <demo [data]="$ctrl.name_1" (changed)="$ctrl.update($event)"></demo>
+  <demo [data]="$ctrl.name_1" (changed)="$ctrl.update($event)"></demo> -->
   <div ui-view></div>
 </div>

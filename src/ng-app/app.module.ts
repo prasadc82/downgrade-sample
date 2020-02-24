@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {UIRouterModule, UIRouter, servicesPlugin} from '@uirouter/angular'
+import {UIRouterModule, UIRouter} from '@uirouter/angular'
 import {UIRouterUpgradeModule} from '@uirouter/angular-hybrid';
 import { BootstrapComponent } from './bootstrap.component';
 
@@ -8,6 +8,8 @@ import { BootstrapComponent } from './bootstrap.component';
 // servicesPlugin(null);
 
 import { RouterModule } from '@angular/router';
+import { DemoComponent } from './demo.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const dashboardFutureState = {
   name: 'dashboard.**',
@@ -17,16 +19,19 @@ const dashboardFutureState = {
 
 @NgModule({
   declarations: [
-    BootstrapComponent
+    BootstrapComponent,
+    DemoComponent
   ],
   entryComponents: [
-    BootstrapComponent
+    BootstrapComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     UIRouterUpgradeModule,
-    UIRouterModule.forChild({states: [dashboardFutureState]}),
-    RouterModule.forRoot([])
+    UIRouterModule.forChild({states: [dashboardFutureState]})
+    // RouterModule.forRoot([])
   ]
 })
 export class AppModule {
