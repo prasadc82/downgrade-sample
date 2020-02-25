@@ -35,6 +35,13 @@ let config = {
           'webpack-import-glob-loader'
         ]
       },
+      // https://github.com/angular/angular/issues/23426#issuecomment-449725566
+      {
+        test: /[\/\\]@angular[\/\\].+\.js$/,
+        parser: {
+          system: true
+        }
+      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -57,13 +64,20 @@ let config = {
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       'window.jQuery': 'jquery'
-    })
+    }),
+    // https://github.com/angular/angular/issues/20357#issuecomment-392266272
+    new webpack.ContextReplacementPlugin(
+      /\@angular(\\|\/)core(\\|\/)fesm5/,
+      `${paths.root}/ng-app/`,
+      {}
+    )
   ],
   resolve: {
     extensions: ['.ts', '.js', '.json'],
     alias: {
       App: `${paths.source}/app/`
-    }
+    },
+    symlinks: true
   }
 };
 
